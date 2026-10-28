@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TidyDocs — Document Formatting &amp; Cleanup Engine for Google Docs</title>
-  <meta name="description" content="Fast, 100% free, client-side formatting and sorting add-on for Google Docs. Merges broken PDF lines, formats AI markdown, and sorts bibliographies." />
+  <meta name="description" content="A fast, 100% free, client-side formatting &amp; cleanup engine for Google Docs. Merges broken PDF line wraps, converts AI markdown, and sorts bibliographies." />
   <style>
     :root {
       --peach: #f5a573;
@@ -48,9 +48,6 @@
       font-weight: 700;
       color: var(--text);
       text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
     .nav-links {
       display: flex;
@@ -140,6 +137,11 @@
       font-size: 12.5px;
       color: #0f172a;
     }
+    .meta-line {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
     footer {
       border-top: 1px solid var(--border);
       background: #ffffff;
@@ -161,55 +163,94 @@
         <a href="#features">Features</a>
         <a href="#privacy">Privacy Policy</a>
         <a href="#terms">Terms of Service</a>
-        <a href="https://ko-fi.com/S0M829K7TK" target="_blank">Ko-fi</a>
+        <a href="https://ko-fi.com/S0M829K7TK" target="_blank">Support me on Ko-fi</a>
       </div>
     </div>
   </header>
 
   <section class="hero" id="overview">
-    <div class="badge-pill">Google Docs Editor Add-on</div>
-    <h1>Clean, Format, and Organize Your Google Docs in One Click</h1>
-    <p>A lightweight, 100% free client-side utility suite running on Google Apps Script V8. Merges broken PDF line wraps, formats AI markdown, and sorts paragraphs with zero server tracking.</p>
+    <div class="badge-pill">Tidy Docs - Google Docs Editor Add-on</div>
+    <h1>Clean, Format, and Organize Your Google Docs</h1>
+    <p>A fast, 100% free, client-side formatting &amp; cleanup engine for Google Docs. Merges broken PDF lines, formats AI markdown, and sorts bibliographies.</p>
     <a href="#" class="cta-btn">Install on Google Workspace Marketplace</a>
   </section>
 
   <div class="main-wrap">
+    <!-- FEATURES (Matches README.md) -->
     <div class="card" id="features">
-      <h2>Core Features</h2>
+      <h2>Key Features</h2>
+
       <h3>1. Smart Clean Document</h3>
       <ul>
-        <li><strong>PDF Line-Wrap Reconstruction:</strong> Merges broken lines from copied academic 2-column PDFs without joining headings or citations.</li>
-        <li><strong>AI Markdown Formatting:</strong> Converts raw ChatGPT/Claude tags (<code>**bold**</code>, <code>*italics*</code>, <code>### Headings</code>, and <code>`code`</code>) into native Docs styling.</li>
-        <li><strong>Non-Destructive Case Sanitization:</strong> Fixes sentence beginnings and Shift-slips (<code>THe</code>) while preserving proper nouns (<code>United States</code>, <code>Alan Nguyen</code>, <code>OpenCV</code>).</li>
+        <li><strong>PDF Line-Wrap Merger:</strong> Rejoins broken mid-sentence lines from copied multi-column PDF excerpts without gluing headings, lists, or reference citations together.</li>
+        <li><strong>AI Markdown Converter:</strong> Converts ChatGPT, Claude, and Gemini markdown artifacts (<code>**bold**</code>, <code>*italics*</code>, <code>### Headings</code>, and <code>`code`</code> pills) into native Google Docs styles.</li>
+        <li><strong>Non-Destructive Case Sanitizer:</strong> Normalizes lowercase sentence beginnings, fixes Shift-slips (<code>THe</code> &rarr; <code>the</code>), and capitalizes <code>I</code> contractions while strictly protecting properly capitalized proper nouns (<code>United States</code>, <code>Google</code>, <code>HuggingFace</code>, etc.).</li>
+        <li><strong>Spacing Sanitizer:</strong> Strips hidden Unicode zero-width characters and collapses redundant duplicate whitespace.</li>
       </ul>
 
-      <h3>2. Paragraph &amp; Outline Sorting</h3>
+      <h3>2. Paragraph &amp; Outline Sorter</h3>
       <ul>
-        <li><strong>Alphabetical (A to Z and Z to A):</strong> Sorts paragraphs, lists, and table cells in place.</li>
-        <li><strong>Academic Surname Sort:</strong> Sorts bibliography lists by author last name while keeping journal italics and DOIs intact.</li>
-        <li><strong>Section Ordering:</strong> Reorders numbered parts (e.g., 2.3, 2.1, 2.2) along with their body prose into sequential order.</li>
+        <li><strong>Alphabetical (A to Z and Z to A):</strong> In-place sorting of highlighted paragraphs, table cell contents, and numbered outlines.</li>
+        <li><strong>Academic Surname Sort:</strong> Alphabetizes bibliography and reference lists by author last name while preserving italics and hyperlinks.</li>
+        <li><strong>Natural Numeric Ordering:</strong> Accurately sorts numbered items (Chapter 1, Chapter 2, Chapter 10).</li>
+        <li><strong>Hierarchical Nested Lists:</strong> Reorders parent list items while keeping nested child sub-bullets anchored to their respective parents.</li>
+      </ul>
+
+      <h3>3. Numbered Section Organizer</h3>
+      <ul>
+        <li>Automatically detects out-of-order multi-paragraph sections (e.g. <code>2.3</code>, <code>2.1</code>, <code>2.2</code>) and reorganizes them along with their child paragraphs into sequential order (<code>2.1</code> &rarr; <code>2.2</code> &rarr; <code>2.3</code>).</li>
+        <li>Keeps terminal sections (<code>References</code>, <code>Appendices</code>, <code>Acknowledgments</code>) anchored in place.</li>
       </ul>
     </div>
 
+    <!-- PRIVACY POLICY (Matches PRIVACY.md) -->
     <div class="card" id="privacy">
       <h2>Privacy Policy</h2>
-      <p><strong>Last Updated: October 28, 2026</strong></p>
-      <p>TidyDocs runs <strong>100% client-side</strong> inside your Google Docs V8 session. We do not operate external database servers, we do not store your data, and we never transmit document content outside of Google Workspace.</p>
-      <h3>Requested OAuth Scopes</h3>
+      <div class="meta-line">
+        <strong>Last Updated:</strong> October 2026 &bull; <strong>Developer:</strong> Alan Nguyen &bull; <strong>Contact:</strong> <a href="mailto:alannguyen1306@gmail.com">alannguyen1306@gmail.com</a>
+      </div>
+
+      <h3>1. Plain-English Summary</h3>
+      <p>TidyDocs is a 100% client-side Google Docs add-on. It runs entirely inside your browser session using Google Apps Script V8. We operate zero external database servers, collect zero personal data, and never transmit your document text across the internet.</p>
+
+      <h3>2. Permissions &amp; Data Usage</h3>
+      <p>TidyDocs requests only the minimum permissions necessary to function:</p>
       <ul>
-        <li><code>https://www.googleapis.com/auth/documents.currentonly</code>: Used strictly to read and format text in the single active document where you opened TidyDocs.</li>
-        <li><code>https://www.googleapis.com/auth/script.container.ui</code>: Used strictly to display the TidyDocs sidebar and settings interface within Google Docs.</li>
+        <li><code>https://www.googleapis.com/auth/documents.currentonly</code>: Used strictly to read and format text in the single active document currently open in front of you. It cannot access any other file in your Google Drive.</li>
+        <li><code>https://www.googleapis.com/auth/script.container.ui</code>: Used strictly to display the TidyDocs sidebar and settings interface inside Google Docs.</li>
       </ul>
-      <h3>Data Handling</h3>
-      <p>TidyDocs adheres strictly to the <strong>Google API Services User Data Policy</strong>, including Limited Use requirements. Your text is processed purely in ephemeral browser memory and is never used for advertising, telemetry, or machine learning training.</p>
+
+      <h3>3. Data Storage &amp; Retention</h3>
+      <ul>
+        <li><strong>Zero Document Retention:</strong> Your text is processed ephemerally in your browser's sandboxed memory during operations (sorting, cleaning, casing) and is never saved, cached, or logged.</li>
+        <li><strong>Local Settings:</strong> User preferences (such as your chosen sort order) are saved strictly in your local browser sandbox (<code>localStorage</code> / Google Apps Script <code>PropertiesService</code>).</li>
+      </ul>
+
+      <h3>4. Google Limited Use Disclosure</h3>
+      <p>TidyDocs' use and transfer of information received from Google APIs adhere strictly to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank">Google API Services User Data Policy</a>, including the Limited Use requirements. Document content is never transferred to third parties, never used for advertising, and never used to train machine learning models.</p>
+
+      <h3>5. Contact</h3>
+      <p>If you have any questions or feedback, contact Alan Nguyen at <a href="mailto:alannguyen1306@gmail.com">alannguyen1306@gmail.com</a> or open an issue on GitHub.</p>
     </div>
 
+    <!-- TERMS OF SERVICE (Matches TERMS.md) -->
     <div class="card" id="terms">
       <h2>Terms of Service</h2>
-      <p><strong>Last Updated: October 28, 2026</strong></p>
-      <p>TidyDocs is provided free of charge for personal, academic, and commercial use. The software is provided "as is", without warranty of any kind. You are responsible for modifications made to your documents; we encourage maintaining backups or utilizing Google Docs' native Version History and Undo (<code>Ctrl+Z</code>) functionality.</p>
-      <h3>Contact &amp; Support</h3>
-      <p>Developed by Alan Nguyen (Hong Kong). For support inquiries, open an issue on our GitHub repository or contact <a href="mailto:alannguyen1306@gmail.com">alannguyen1306@gmail.com</a>.</p>
+      <div class="meta-line">
+        <strong>Last Updated:</strong> October 2026 &bull; <strong>Developer:</strong> Alan Nguyen &bull; <strong>Contact:</strong> <a href="mailto:alannguyen1306@gmail.com">alannguyen1306@gmail.com</a>
+      </div>
+
+      <h3>1. Agreement &amp; License</h3>
+      <p>By installing or using TidyDocs, you agree to these Terms. TidyDocs is provided as a free add-on for personal, educational, and commercial use.</p>
+
+      <h3>2. "As-Is" Disclaimer &amp; Safe Use</h3>
+      <p>TidyDocs is engineered to preserve formatting and undergo automated regression testing. However, the software is provided "as is", without warranty of any kind. You are responsible for any modifications made to your documents; we encourage utilizing Google Docs' native <strong>Version History</strong> and <strong>Undo (<code>Ctrl+Z</code> / <code>Cmd+Z</code>)</strong> functions when formatting critical files.</p>
+
+      <h3>3. Limitation of Liability</h3>
+      <p>In no event shall the developer be held liable for any damages, document corruption, or lost data resulting from the use of this software.</p>
+
+      <h3>4. Termination</h3>
+      <p>You may terminate these terms at any time simply by uninstalling TidyDocs via the <strong>Extensions &gt; Add-ons &gt; Manage add-ons</strong> menu in Google Docs.</p>
     </div>
   </div>
 
