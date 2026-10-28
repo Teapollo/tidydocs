@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TidyDocs — Document Formatting &amp; Cleanup Engine for Google Docs</title>
+  <meta name="description" content="Fast, 100% free, client-side formatting and sorting add-on for Google Docs. Merges broken PDF lines, formats AI markdown, and sorts bibliographies." />
+  <style>
+    :root {
+      --peach: #f5a573;
+      --peach-hover: #ee935c;
+      --peach-soft: #fdf3ec;
+      --peach-dark: #a85422;
+      --bg: #fcfaf7;
+      --card: #ffffff;
+      --text: #2d3748;
+      --text-muted: #718096;
+      --border: #eee7df;
+      --radius: 12px;
+      --shadow: 0 4px 16px rgba(45, 55, 72, 0.06);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Google Sans", Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 13.5px;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--peach-dark); }
+    .hero {
+      max-width: 800px;
+      margin: 50px auto 40px auto;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .badge-pill {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 99px;
+      background: var(--peach-soft);
+      color: var(--peach-dark);
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 34px;
+      line-height: 1.25;
+      margin: 0 0 16px 0;
+      color: #1a202c;
+    }
+    .hero p {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin: 0 0 28px 0;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--peach);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 12px 28px;
+      border-radius: 99px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(245, 165, 115, 0.45);
+      transition: all 0.15s;
+    }
+    .cta-btn:hover {
+      background: var(--peach-hover);
+      transform: translateY(-1px);
+    }
+    .main-wrap {
+      max-width: 840px;
+      margin: 0 auto 60px auto;
+      padding: 0 20px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 30px;
+      box-shadow: var(--shadow);
+    }
+    h2 {
+      font-size: 22px;
+      margin-top: 0;
+      margin-bottom: 16px;
+      color: #1a202c;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+    h3 { font-size: 16px; margin: 20px 0 8px 0; color: #2d3748; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 6px; }
+    code {
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 12.5px;
+      color: #0f172a;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      background: #ffffff;
+      padding: 24px 20px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    footer a { color: var(--peach-dark); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="#overview" class="logo">TidyDocs</a>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#features">Features</a>
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#terms">Terms of Service</a>
+        <a href="https://ko-fi.com/S0M829K7TK" target="_blank">Ko-fi</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="overview">
+    <div class="badge-pill">Google Docs Editor Add-on</div>
+    <h1>Clean, Format, and Organize Your Google Docs in One Click</h1>
+    <p>A lightweight, 100% free client-side utility suite running on Google Apps Script V8. Merges broken PDF line wraps, formats AI markdown, and sorts paragraphs with zero server tracking.</p>
+    <a href="#" class="cta-btn">Install on Google Workspace Marketplace</a>
+  </section>
+
+  <div class="main-wrap">
+    <div class="card" id="features">
+      <h2>Core Features</h2>
+      <h3>1. Smart Clean Document</h3>
+      <ul>
+        <li><strong>PDF Line-Wrap Reconstruction:</strong> Merges broken lines from copied academic 2-column PDFs without joining headings or citations.</li>
+        <li><strong>AI Markdown Formatting:</strong> Converts raw ChatGPT/Claude tags (<code>**bold**</code>, <code>*italics*</code>, <code>### Headings</code>, and <code>`code`</code>) into native Docs styling.</li>
+        <li><strong>Non-Destructive Case Sanitization:</strong> Fixes sentence beginnings and Shift-slips (<code>THe</code>) while preserving proper nouns (<code>United States</code>, <code>Alan Nguyen</code>, <code>OpenCV</code>).</li>
+      </ul>
+
+      <h3>2. Paragraph &amp; Outline Sorting</h3>
+      <ul>
+        <li><strong>Alphabetical (A to Z and Z to A):</strong> Sorts paragraphs, lists, and table cells in place.</li>
+        <li><strong>Academic Surname Sort:</strong> Sorts bibliography lists by author last name while keeping journal italics and DOIs intact.</li>
+        <li><strong>Section Ordering:</strong> Reorders numbered parts (e.g., 2.3, 2.1, 2.2) along with their body prose into sequential order.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="privacy">
+      <h2>Privacy Policy</h2>
+      <p><strong>Last Updated: October 28, 2026</strong></p>
+      <p>TidyDocs runs <strong>100% client-side</strong> inside your Google Docs V8 session. We do not operate external database servers, we do not store your data, and we never transmit document content outside of Google Workspace.</p>
+      <h3>Requested OAuth Scopes</h3>
+      <ul>
+        <li><code>https://www.googleapis.com/auth/documents.currentonly</code>: Used strictly to read and format text in the single active document where you opened TidyDocs.</li>
+        <li><code>https://www.googleapis.com/auth/script.container.ui</code>: Used strictly to display the TidyDocs sidebar and settings interface within Google Docs.</li>
+      </ul>
+      <h3>Data Handling</h3>
+      <p>TidyDocs adheres strictly to the <strong>Google API Services User Data Policy</strong>, including Limited Use requirements. Your text is processed purely in ephemeral browser memory and is never used for advertising, telemetry, or machine learning training.</p>
+    </div>
+
+    <div class="card" id="terms">
+      <h2>Terms of Service</h2>
+      <p><strong>Last Updated: October 28, 2026</strong></p>
+      <p>TidyDocs is provided free of charge for personal, academic, and commercial use. The software is provided "as is", without warranty of any kind. You are responsible for modifications made to your documents; we encourage maintaining backups or utilizing Google Docs' native Version History and Undo (<code>Ctrl+Z</code>) functionality.</p>
+      <h3>Contact &amp; Support</h3>
+      <p>Developed by Alan Nguyen (Hong Kong). For support inquiries, open an issue on our GitHub repository or contact <a href="mailto:alannguyen1306@gmail.com">alannguyen1306@gmail.com</a>.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 TidyDocs by Alan Nguyen. All rights reserved. &bull; <a href="https://ko-fi.com/S0M829K7TK" target="_blank">Support on Ko-fi</a></p>
+  </footer>
+
+</body>
+</html>
