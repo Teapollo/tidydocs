@@ -19,7 +19,7 @@
 - **PDF Line-Wrap Merger**: Intelligently rejoins broken mid-sentence lines from copied multi-column PDF excerpts without gluing headings, lists, or reference citations together.
 - **AI Markdown Converter**: Converts ChatGPT, Claude, and Gemini markdown artifacts (`**bold**`, `*italics*`, `### Headings`, and `inline_code` pills) into real Google Docs styles.
 - **Non-Destructive Case Sanitizer**: Normalizes lowercase sentence beginnings, fixes Shift-slips (`THe` -> `the`), and capitalizes `I` contractions while strictly protecting properly capitalized proper nouns (`United States`, `Google`, `HuggingFace`, etc.).
-- **Spacing Sanitizer**: Strips hidden Unicode zero-width characters (`​`, `﻿`) and collapses redundant duplicate whitespace.
+- **Spacing Sanitizer**: Strips hidden Unicode zero-width characters (`\u200B`, `\uFEFF`) and collapses redundant duplicate whitespace.
 
 ### 2. Paragraph & Outline Sorter
 - **Alphabetical (A to Z and Z to A)**: In-place sorting of highlighted paragraphs, table cell contents, and numbered outlines.
