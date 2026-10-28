@@ -63,5 +63,5 @@ If you encounter any issues, have feature suggestions, or want to contribute fee
 
 ## Author
 
-**Teapollo**
+**Alan Nguyen**
 
